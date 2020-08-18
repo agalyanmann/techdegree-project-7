@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../src/treehouse.css';
+import axios from 'axios';
 import apiKey from './config';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
 
@@ -9,7 +10,28 @@ import Photo from './component/Photo';
 import NotFound from './component/NotFound';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      photos: []
+    };
+  }
+
+  componentDidMount() {
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=sunsets&per_page=24&format=json&nojsoncallback=1`)
+      .then(response => {
+        this.setState({
+          photos: response.data.photos.photo
+        })
+      })
+      .then(error => {
+        console.log('Error fetching ad parsing data', error);
+      });
+  }
+
   render() {
+    console.log(this.state.photos);
     return (
       <div className="container">
         <Search />

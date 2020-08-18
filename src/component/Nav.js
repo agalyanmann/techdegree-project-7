@@ -5,7 +5,7 @@ function Nav() {
     let url = '';
 
     return (
-        <nav class="main-nav">
+        <nav className="main-nav">
             <ul>
                 <li><a href={url}>Cats</a></li>
                 <li><a href={url}>Dogs</a></li>
