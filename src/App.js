@@ -1,5 +1,6 @@
 import React from 'react';
 import '../src/treehouse.css';
+import apiKey from './config';
 
 import Search from './component/Search';
 import Nav from './component/Nav';
