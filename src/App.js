@@ -1,9 +1,10 @@
 import React from 'react';
 import '../src/treehouse.css';
 
+import Search from './component/Search';
 import Nav from './component/Nav';
 import Photo from './component/Photo';
-import Search from './component/Search';
+import NotFound from './component/NotFound';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Search />
       <Nav /> 
       <Photo />
+      <NotFound />
     </div>
   );
 }
