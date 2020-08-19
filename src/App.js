@@ -19,7 +19,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=sunsets&per_page=24&format=json&nojsoncallback=1`)
+
+  }
+
+  preformSearch = (query) => {
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
           photos: response.data.photos.photo
@@ -35,7 +39,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-          <Search />
+          <Search onSearch={this.preformSearch} />
           <Nav />
           <Photo data={this.state.photos} />
           <NotFound />
