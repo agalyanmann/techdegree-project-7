@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../src/treehouse.css';
 import axios from 'axios';
 import apiKey from './config';
-import { BrowserRouter, Route, Link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Search from './component/Search';
 import Nav from './component/Nav';
@@ -19,10 +19,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-
+    this.preformSearch();
   }
 
-  preformSearch = (query) => {
+  preformSearch = (query = 'sunsets') => {
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
         <div className="container">
           <Search onSearch={this.preformSearch} />
           <Nav />
-          <Photo data={this.state.photos} />
+          <Route exact path='/' render={ () => <Photo data={this.state.photos} /> } />
           <NotFound />
         </div>
       </BrowserRouter>
