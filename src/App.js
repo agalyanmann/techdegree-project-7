@@ -37,7 +37,7 @@ class App extends Component {
         <div className="container">
           <Search />
           <Nav />
-          <Photo />
+          <Photo data={this.state.photos} />
           <NotFound />
         </div>
       </BrowserRouter>
