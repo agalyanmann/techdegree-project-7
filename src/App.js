@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../src/treehouse.css';
 import axios from 'axios';
 import apiKey from './config';
-import { Route, Link, NavLink, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink, Switch } from 'react-router-dom';
 
 import Search from './component/Search';
 import Nav from './component/Nav';
@@ -33,12 +33,14 @@ class App extends Component {
   render() {
     console.log(this.state.photos);
     return (
-      <div className="container">
-        <Search />
-        <Nav />
-        <Photo />
-        <NotFound />
-      </div>
+      <BrowserRouter>
+        <div className="container">
+          <Search />
+          <Nav />
+          <Photo />
+          <NotFound />
+        </div>
+      </BrowserRouter>
     );
   }
 }
