@@ -1,9 +1,6 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import Cats from './NavRequest/Cats';
-import Dogs from './NavRequest/Dogs';
-import Birds from './NavRequest/Birds';
 
 function Nav() {
     return (
@@ -16,9 +13,6 @@ function Nav() {
                 </ul>
             </nav>
 
-            <Route path='/cats' component={Cats} />
-            <Route path='/dogs' component={Dogs} />
-            <Route path='/birds' component={Birds} />
         </div>
     )
 }

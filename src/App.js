@@ -9,6 +9,11 @@ import Nav from './component/Nav';
 import Photo from './component/Photo';
 import NotFound from './component/NotFound';
 
+
+import Cats from './component/NavRequest/Cats';
+import Dogs from './component/NavRequest/Dogs';
+import Birds from './component/NavRequest/Birds';
+
 class App extends Component {
 
   constructor() {
@@ -41,8 +46,12 @@ class App extends Component {
         <div className="container">
           <Search onSearch={this.preformSearch} />
           <Nav />
-          <Route exact path='/' render={ () => <Photo data={this.state.photos} /> } />
-          <NotFound />
+          <Switch>
+            <Route exact path='/' render={() => <Photo data={this.state.photos} />} />
+            <Route path='/cats' component={Cats} />
+            <Route path='/dogs' component={Dogs} />
+            <Route path='/birds' component={Birds} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
