@@ -1,13 +1,10 @@
 import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
-
-import Kingfishers from './NavRequest/Kingfishers'
-import Motmots from './NavRequest/Motmots';
-import Owls from './NavRequest/Owls';
+import Photo from './Photo';
 
 
-function Nav() {
+function Nav({kingfishers, motmots, owls}) {
     return (
         <div className="main-content">
             <nav className="main-nav">
@@ -17,9 +14,9 @@ function Nav() {
                     <li><NavLink to='/owls'>Owls</NavLink></li>
                 </ul>
             </nav>
-            <Route path='/kingfishers' component={Kingfishers} />
-            <Route path='/motmots' component={Motmots} />
-            <Route path='/owls' component={Owls} />
+            <Route path='/kingfishers' render={() => <Photo data={kingfishers} />} />
+            <Route path='/motmots' render={() => <Photo data={motmots} />} />
+            <Route path='/owls' render={() => <Photo data={owls} />} />
         </div>
     )
 }
