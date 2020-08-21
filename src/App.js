@@ -10,9 +10,9 @@ import Photo from './component/Photo';
 import NotFound from './component/NotFound';
 
 
-import Cats from './component/NavRequest/Cats';
-import Dogs from './component/NavRequest/Dogs';
-import Birds from './component/NavRequest/Birds';
+import Kingfishers from './component/NavRequest/Kingfishers';
+import Motmots from './component/NavRequest/Motmots';
+import Owls from './component/NavRequest/Owls';
 
 class App extends Component {
 
@@ -48,9 +48,10 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route exact path='/' render={() => <Photo data={this.state.photos} />} />
-            <Route path='/cats' component={Cats} />
-            <Route path='/dogs' component={Dogs} />
-            <Route path='/birds' component={Birds} />
+            <Route path='/search/:search' render={() => <Photo data={this.state.photos} />} />
+            <Route path='/kingfishers' component={Kingfishers} />
+            <Route path='/motmots' component={Motmots} />
+            <Route path='/owls' component={Owls} />
           </Switch>
         </div>
       </BrowserRouter>

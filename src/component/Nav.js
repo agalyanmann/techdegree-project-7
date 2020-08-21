@@ -7,9 +7,9 @@ function Nav() {
         <div className="main-content">
             <nav className="main-nav">
                 <ul>
-                    <li><NavLink to='/cats'>Cats</NavLink></li>
-                    <li><NavLink to='/dogs'>Dogs</NavLink></li>
-                    <li><NavLink to='/birds'>Birds</NavLink></li>
+                    <li><NavLink to='/kingfishers'>Kingfishers</NavLink></li>
+                    <li><NavLink to='/motmots'>Motmots</NavLink></li>
+                    <li><NavLink to='/owls'>Owls</NavLink></li>
                 </ul>
             </nav>
 

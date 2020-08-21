@@ -4,7 +4,7 @@ import axios from 'axios';
 import Photo from '../Photo';
 import apiKey from '../../config';
 
-class Cats extends Component {
+class Owls extends Component {
     
     constructor() {
         super();
@@ -14,7 +14,7 @@ class Cats extends Component {
       }
 
       componentDidMount() {
-        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=cats&per_page=24&format=json&nojsoncallback=1`)
+        axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=owls&per_page=24&format=json&nojsoncallback=1`)
         .then(response => {
           this.setState({
             photos: response.data.photos.photo
@@ -32,4 +32,4 @@ class Cats extends Component {
     }
 }
 
-export default Cats;
+export default Owls;
