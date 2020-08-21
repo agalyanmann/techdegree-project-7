@@ -8,7 +8,6 @@ import Search from './component/Search';
 import Nav from './component/Nav';
 import Photo from './component/Photo';
 
-
 class App extends Component {
 
   constructor() {
@@ -70,13 +69,14 @@ class App extends Component {
   }
 
   render() {
+
     const loading = this.state.loading;
 
     return (
       <BrowserRouter>
         <div className="container">
           <Search onSearch={this.preformSearch} />
-          <Nav kingfishers={this.state.kingfishers} motmots={this.state.motmots} owls={this.state.owls}/>
+          <Nav kingfishers={this.state.kingfishers} motmots={this.state.motmots} owls={this.state.owls} />
           {
             (loading)
               ? <h3>Loading...</h3>

@@ -14,8 +14,6 @@ function Photo({ data }) {
         photos = <NoPhotos />
     }
 
-
-
     return (
         <div className='photo-container'>
             <h2>Results</h2>

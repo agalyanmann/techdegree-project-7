@@ -3,8 +3,7 @@ import { NavLink, Route } from 'react-router-dom';
 
 import Photo from './Photo';
 
-
-function Nav({kingfishers, motmots, owls}) {
+function Nav({ kingfishers, motmots, owls }) {
     return (
         <div className="main-content">
             <nav className="main-nav">
