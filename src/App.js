@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Search from './component/Search';
 import Nav from './component/Nav';
 import Photo from './component/Photo';
-import NotFound from './component/NotFound';
 
 
 import Kingfishers from './component/NavRequest/Kingfishers';
