@@ -1,5 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
+
+
+import Kingfishers from './NavRequest/Kingfishers'
+import Motmots from './NavRequest/Motmots';
+import Owls from './NavRequest/Owls';
 
 
 function Nav() {
@@ -12,7 +17,9 @@ function Nav() {
                     <li><NavLink to='/owls'>Owls</NavLink></li>
                 </ul>
             </nav>
-
+            <Route path='/kingfishers' component={Kingfishers} />
+            <Route path='/motmots' component={Motmots} />
+            <Route path='/owls' component={Owls} />
         </div>
     )
 }
