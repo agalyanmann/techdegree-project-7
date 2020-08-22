@@ -72,6 +72,10 @@ input {
   align-items: flex-start;
 }
 
+.photo-container ul ul {
+  margin: 0 auto;
+}
+
 .photo-container ul li {
   width: 220px;
   height: 165px;
