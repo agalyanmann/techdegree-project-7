@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NotFound() {
+function NoPhoto() {
     return (
         <ul>
             <li className="not-found">
@@ -11,4 +11,4 @@ function NotFound() {
     )
 }
 
-export default NotFound;
+export default NoPhoto;

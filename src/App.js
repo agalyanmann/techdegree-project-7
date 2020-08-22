@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Search from './component/Search';
 import Nav from './component/Nav';
 import Photo from './component/Photo';
+import NotFound from './component/NotFoundErr';
 
 class App extends Component {
 
@@ -90,6 +91,7 @@ class App extends Component {
               <Switch>
                 <Route exact path='/' render={() => <Photo data={this.state.photos} />} />
                 <Route path='/search/:search' render={() => <Photo data={this.state.photos} />} />
+                <Route component={NotFound} />
               </Switch>
           }
         </div>
