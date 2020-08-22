@@ -4,6 +4,7 @@ import NoPhotos from '../component/NoPhotos';
 
 function Photo({ data }) {
 
+    //check if search returned results.
     const results = data;
     let photos;
     if (results.length > 0) {
