@@ -33,7 +33,7 @@ class App extends Component {
           kingfishers: response.data.photos.photo
         })
       })
-      .then(error => {
+      .catch(error => {
         console.log('Error fetching ad parsing data', error);
       });
 
@@ -44,18 +44,18 @@ class App extends Component {
           motmots: response.data.photos.photo
         })
       })
-      .then(error => {
+      .catch(error => {
         console.log('Error fetching ad parsing data', error);
       });
 
     //owl page data
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=owls&per_page=24&format=json&nojsoncallback=1`)
-      .then(response => {
+      .catch(response => {
         this.setState({
           owls: response.data.photos.photo
         })
       })
-      .then(error => {
+      .catch(error => {
         console.log('Error fetching ad parsing data', error);
       });
   }
@@ -68,7 +68,7 @@ class App extends Component {
           loading: false
         })
       })
-      .then(error => {
+      .catch(error => {
         console.log('Error fetching ad parsing data', error);
       });
   }
