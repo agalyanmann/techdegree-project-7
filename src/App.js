@@ -83,7 +83,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           <Search onSearch={this.preformSearch} />
-          <Nav kingfishers={this.state.kingfishers} motmots={this.state.motmots} owls={this.state.owls} />
+          <Nav />
           {
             (loading)
               ? <h3>Loading...</h3>
@@ -91,6 +91,10 @@ class App extends Component {
               <Switch>
                 <Route exact path='/' render={() => <Photo data={this.state.photos} />} />
                 <Route path='/search/:search' render={() => <Photo data={this.state.photos} />} />
+
+                <Route exact path='/kingfishers' render={() => <Photo data={this.state.kingfishers} />} />
+                <Route exact path='/motmots' render={() => <Photo data={this.state.motmots} />} />
+                <Route exact path='/owls' render={() => <Photo data={this.state.owls} />} />
                 <Route component={NotFound} />
               </Switch>
           }
