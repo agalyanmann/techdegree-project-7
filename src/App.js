@@ -51,7 +51,7 @@ class App extends Component {
 
     //owl page data
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=owls&per_page=24&format=json&nojsoncallback=1`)
-      .catch(response => {
+      .then(response => {
         this.setState({
           owls: response.data.photos.photo
         })

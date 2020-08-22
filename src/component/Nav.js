@@ -13,9 +13,9 @@ function Nav({ kingfishers, motmots, owls }) {
                     <li><NavLink to='/owls'>Owls</NavLink></li>
                 </ul>
             </nav>
-            <Route path='/kingfishers' render={() => <Photo data={kingfishers} />} />
-            <Route path='/motmots' render={() => <Photo data={motmots} />} />
-            <Route path='/owls' render={() => <Photo data={owls} />} />
+            <Route exact path='/kingfishers' render={() => <Photo data={kingfishers} />} />
+            <Route exact path='/motmots' render={() => <Photo data={motmots} />} />
+            <Route exact path='/owls' render={() => <Photo data={owls} />} />
         </div>
     )
 }
