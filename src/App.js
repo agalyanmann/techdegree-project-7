@@ -25,44 +25,37 @@ class App extends Component {
   componentDidMount() {
 
     //inistial api call through search function
+    this.getLinkPhotos();
     this.preformSearch();
 
-    //kingfisher page data
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=kingfisher&per_page=24&format=json&nojsoncallback=1`)
-      .then(response => {
-        this.setState({
-          kingfishers: response.data.photos.photo
-        })
-      })
-      .catch(error => {
-        console.log('Error fetching ad parsing data', error);
-      });
+  }
 
-    //motmot page data
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=motmots&per_page=24&format=json&nojsoncallback=1`)
-      .then(response => {
-        this.setState({
-          motmots: response.data.photos.photo
-        })
-      })
-      .catch(error => {
-        console.log('Error fetching ad parsing data', error);
-      });
+  getLinkPhotos = () => {
+    const links = ['owls', 'motmots', 'kingfisher']
 
-    //owl page data
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=owls&per_page=24&format=json&nojsoncallback=1`)
-      .then(response => {
-        this.setState({
-          owls: response.data.photos.photo
+    links.forEach(link => {
+      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${link}&tag_mode=all&per_page=24&format=json&nojsoncallback=1`)
+        .then(response => {
+          if (link === 'owls') {
+            this.setState({
+              owls: response.data.photos.photo
+            })
+          } else if (link === 'motmots') {
+            this.setState({
+              motmots: response.data.photos.photo
+            })
+          } else if (link === 'kingfisher') {
+            this.setState({
+              kingfishers: response.data.photos.photo
+            })
+          }
         })
-      })
-      .catch(error => {
-        console.log('Error fetching ad parsing data', error);
-      });
+    });
   }
 
   preformSearch = (query = 'sunsets') => {
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&tag_mode=all&per_page=24&format=json&nojsoncallback=1`)
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&sort=interestingness-desc&sort=relevance&per_page=24&format=json&nojsoncallback=1`)
+      .then(this.setState({ loading: true }))
       .then(response => {
         this.setState({
           photos: response.data.photos.photo,
