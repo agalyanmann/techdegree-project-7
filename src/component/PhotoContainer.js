@@ -1,8 +1,8 @@
 import React from 'react';
-import PhotoItem from '../component/PhotoItem';
-import NoPhotos from '../component/NoPhotos';
+import PhotoItem from './PhotoItem';
+import NoPhotos from './NoPhotos';
 
-function Photo({ data }) {
+function PhotoContainer({ data }) {
 
     //check if search returned results.
     const results = data;
@@ -25,4 +25,4 @@ function Photo({ data }) {
     )
 }
 
-export default Photo;
+export default PhotoContainer;

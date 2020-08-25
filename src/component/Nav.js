@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-
-function Nav({ kingfishers, motmots, owls }) {
+function Nav() {
     return (
         <div className="main-content">
             <nav className="main-nav">
