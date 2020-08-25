@@ -51,6 +51,9 @@ class App extends Component {
             })
           }
         })
+        .catch(error => {
+          console.log('Error fetching and parsing data', error);
+        });
     });
   }
 
@@ -64,7 +67,7 @@ class App extends Component {
         })
       })
       .catch(error => {
-        console.log('Error fetching ad parsing data', error);
+        console.log('Error fetching and parsing data', error);
       });
   }
 
@@ -88,8 +91,6 @@ class App extends Component {
                 <Route exact path='/kingfishers' render={() => <PhotoContainer data={this.state.kingfishers} />} />
                 <Route exact path='/motmots' render={() => <PhotoContainer data={this.state.motmots} />} />
                 <Route exact path='/owls' render={() => <PhotoContainer data={this.state.owls} />} />
-                <Route exact path='/' render={() => <PhotoContainer data={this.state.photos} />} />
-                <Route path='/search/:search' render={() => <PhotoContainer data={this.state.photos} />} />
                 <Route component={NotFound} />
               </Switch>
           }
