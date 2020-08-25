@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Search from './component/Search';
 import Nav from './component/Nav';
-import Photo from './component/Photo';
+import PhotoContainer from './component/PhotoContainer';
 import NotFound from './component/NotFoundErr';
 
 class App extends Component {
@@ -30,6 +30,7 @@ class App extends Component {
 
   }
 
+  //call and load information for nav links
   getLinkPhotos = () => {
     const links = ['owls', 'motmots', 'kingfisher']
 
@@ -82,8 +83,8 @@ class App extends Component {
               ? <h3>Loading...</h3>
               :
               <Switch>
-                <Route exact path='/' render={() => <Photo data={this.state.photos} />} />
-                <Route path='/search/:search' render={() => <Photo data={this.state.photos} />} />
+                <Route exact path='/' render={() => <PhotoContainer data={this.state.photos} />} />
+                <Route path='/search/:search' render={() => <PhotoContainer data={this.state.photos} />} />
                 <Route component={NotFound} />
               </Switch>
           }
