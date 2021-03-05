@@ -77,7 +77,7 @@ class App extends Component {
     const loading = this.state.loading;
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/techdegree-project-7">
         <div className="container">
           <Search onSearch={this.preformSearch} />
           <Nav />
