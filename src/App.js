@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../src/treehouse.css';
 import axios from 'axios';
 import apiKey from './config';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import Search from './component/Search';
 import Nav from './component/Nav';
@@ -77,7 +77,7 @@ class App extends Component {
     const loading = this.state.loading;
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="container">
           <Search onSearch={this.preformSearch} />
           <Nav />
@@ -95,7 +95,7 @@ class App extends Component {
               </Switch>
           }
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
